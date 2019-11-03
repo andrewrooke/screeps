@@ -17,7 +17,7 @@ var roleRepairer = {
                 }
         }
         else {
-            var con_targets = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
+            var con_targets = creep.room.find(FIND_CONSTRUCTION_SITES);
             var rep_wall_targets = creep.room.find(FIND_STRUCTURES, {
                 filter: object => object.hits < object.hitsMax
             });
@@ -27,7 +27,7 @@ var roleRepairer = {
                     creep.moveTo(con_targets[0]);
                 }
             }
-            if(rep_wall_targets.length > 0 && creep.store[RESOURCE_ENERGY] > 0) {
+            else if(rep_wall_targets.length > 0 && creep.store[RESOURCE_ENERGY] > 0) {
                 if(creep.repair(rep_wall_targets[0]) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(rep_wall_targets[0]);
                 }

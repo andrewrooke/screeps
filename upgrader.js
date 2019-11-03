@@ -5,11 +5,11 @@ var roleUpgrader = {
         if (creep.memory.task == 'pickup') {
             var sources = creep.room.find(FIND_SOURCES);
             if (creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
-                if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(sources[0]);
+                if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(sources[1]);
                 }
                 else if (creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
-                    creep.moveTo(sources[0]);
+                    creep.moveTo(sources[1]);
                 }
             }
             else {
